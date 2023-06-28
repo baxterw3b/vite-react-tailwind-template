@@ -13,8 +13,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: [resolve(__dirname, "src/index.ts")],
-      name: "Test",
-      formats: ["es"],
+      name: "Headless",
+      formats: ["es", "umd"],
+      fileName: (format) => `headless.${format}.js`,
     },
   },
   plugins: [
