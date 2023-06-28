@@ -4,7 +4,11 @@ export default {
     "./src/**/*.tsx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'headless': '#000FFF'
+      }
+    },
   },
   plugins: [],
 }

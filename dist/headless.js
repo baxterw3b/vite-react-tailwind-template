@@ -15,15 +15,15 @@ function ir() {
     return k;
   Re = 1;
   var P = Oe, S = Symbol.for("react.element"), V = Symbol.for("react.fragment"), y = Object.prototype.hasOwnProperty, F = P.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, A = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function w(h, l, R) {
+  function w(E, l, R) {
     var v, g = {}, m = null, I = null;
     R !== void 0 && (m = "" + R), l.key !== void 0 && (m = "" + l.key), l.ref !== void 0 && (I = l.ref);
     for (v in l)
       y.call(l, v) && !A.hasOwnProperty(v) && (g[v] = l[v]);
-    if (h && h.defaultProps)
-      for (v in l = h.defaultProps, l)
+    if (E && E.defaultProps)
+      for (v in l = E.defaultProps, l)
         g[v] === void 0 && (g[v] = l[v]);
-    return { $$typeof: S, type: h, key: m, ref: I, props: g, _owner: F.current };
+    return { $$typeof: S, type: E, key: m, ref: I, props: g, _owner: F.current };
   }
   return k.Fragment = V, k.jsx = w, k.jsxs = w, k;
 }
@@ -40,7 +40,7 @@ var D = {};
 var Te;
 function ur() {
   return Te || (Te = 1, process.env.NODE_ENV !== "production" && function() {
-    var P = Oe, S = Symbol.for("react.element"), V = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), F = Symbol.for("react.strict_mode"), A = Symbol.for("react.profiler"), w = Symbol.for("react.provider"), h = Symbol.for("react.context"), l = Symbol.for("react.forward_ref"), R = Symbol.for("react.suspense"), v = Symbol.for("react.suspense_list"), g = Symbol.for("react.memo"), m = Symbol.for("react.lazy"), I = Symbol.for("react.offscreen"), X = Symbol.iterator, Ce = "@@iterator";
+    var P = Oe, S = Symbol.for("react.element"), V = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), F = Symbol.for("react.strict_mode"), A = Symbol.for("react.profiler"), w = Symbol.for("react.provider"), E = Symbol.for("react.context"), l = Symbol.for("react.forward_ref"), R = Symbol.for("react.suspense"), v = Symbol.for("react.suspense_list"), g = Symbol.for("react.memo"), m = Symbol.for("react.lazy"), I = Symbol.for("react.offscreen"), X = Symbol.iterator, Ce = "@@iterator";
     function Pe(e) {
       if (e === null || typeof e != "object")
         return null;
@@ -68,7 +68,7 @@ function ur() {
     var we = !1, xe = !1, je = !1, ke = !1, De = !1, Z;
     Z = Symbol.for("react.module.reference");
     function Fe(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === y || e === A || De || e === F || e === R || e === v || ke || e === I || we || xe || je || typeof e == "object" && e !== null && (e.$$typeof === m || e.$$typeof === g || e.$$typeof === w || e.$$typeof === h || e.$$typeof === l || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === y || e === A || De || e === F || e === R || e === v || ke || e === I || we || xe || je || typeof e == "object" && e !== null && (e.$$typeof === m || e.$$typeof === g || e.$$typeof === w || e.$$typeof === E || e.$$typeof === l || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
@@ -107,7 +107,7 @@ function ur() {
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
-          case h:
+          case E:
             var r = e;
             return Q(r) + ".Consumer";
           case w:
@@ -236,29 +236,29 @@ function ur() {
           }), typeof Reflect == "object" && Reflect.construct) {
             try {
               Reflect.construct(o, []);
-            } catch (E) {
-              n = E;
+            } catch (h) {
+              n = h;
             }
             Reflect.construct(e, [], o);
           } else {
             try {
               o.call();
-            } catch (E) {
-              n = E;
+            } catch (h) {
+              n = h;
             }
             e.call(o.prototype);
           }
         } else {
           try {
             throw Error();
-          } catch (E) {
-            n = E;
+          } catch (h) {
+            n = h;
           }
           e();
         }
-      } catch (E) {
-        if (E && n && typeof E.stack == "string") {
-          for (var a = E.stack.split(`
+      } catch (h) {
+        if (h && n && typeof h.stack == "string") {
+          for (var a = h.stack.split(`
 `), d = n.stack.split(`
 `), s = a.length - 1, f = d.length - 1; s >= 1 && f >= 0 && a[s] !== d[f]; )
             f--;
@@ -502,7 +502,7 @@ Check your code at ` + r + ":" + t + ".";
         return "";
       }
     }
-    var Ee = {};
+    var he = {};
     function Qe(e) {
       {
         var r = be();
@@ -515,15 +515,15 @@ Check the top-level render call using <` + t + ">.");
         return r;
       }
     }
-    function he(e, r) {
+    function Ee(e, r) {
       {
         if (!e._store || e._store.validated || e.key != null)
           return;
         e._store.validated = !0;
         var t = Qe(r);
-        if (Ee[t])
+        if (he[t])
           return;
-        Ee[t] = !0;
+        he[t] = !0;
         var n = "";
         e && e._owner && e._owner !== G.current && (n = " It was passed a child from " + b(e._owner.type) + "."), O(e), c('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', t, n), O(null);
       }
@@ -535,7 +535,7 @@ Check the top-level render call using <` + t + ">.");
         if (q(e))
           for (var t = 0; t < e.length; t++) {
             var n = e[t];
-            K(n) && he(n, r);
+            K(n) && Ee(n, r);
           }
         else if (K(e))
           e._store && (e._store.validated = !0);
@@ -543,7 +543,7 @@ Check the top-level render call using <` + t + ">.");
           var i = Pe(e);
           if (typeof i == "function" && i !== e.entries)
             for (var u = i.call(e), o; !(o = u.next()).done; )
-              K(o.value) && he(o.value, r);
+              K(o.value) && Ee(o.value, r);
         }
       }
     }
@@ -626,7 +626,7 @@ Check the top-level render call using <` + t + ">.");
 }
 process.env.NODE_ENV === "production" ? H.exports = ir() : H.exports = ur();
 var sr = H.exports;
-const lr = ({ text: P }) => /* @__PURE__ */ sr.jsx("button", { className: "text-red-500", children: P });
+const lr = ({ text: P }) => /* @__PURE__ */ sr.jsx("button", { className: "text-headless", children: P });
 export {
   lr as Button
 };

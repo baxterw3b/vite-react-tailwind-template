@@ -3,6 +3,6 @@ interface ButtonProps {
     text?: string
 }
 
-const Button = ({text}: ButtonProps) => <button className="text-red-500">{text}</button>
+const Button = ({text}: ButtonProps) => <button className="text-headless">{text}</button>
 
 export default Button
