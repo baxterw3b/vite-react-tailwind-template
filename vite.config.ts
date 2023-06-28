@@ -20,6 +20,7 @@ export default defineConfig({
         // for externalized deps
         globals: {
           react: "React",
+          "react-dom": "ReactDOM",
         },
       },
     },
