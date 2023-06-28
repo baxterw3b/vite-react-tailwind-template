@@ -14,19 +14,13 @@ export default defineConfig({
     lib: {
       entry: [resolve(__dirname, "src/index.ts")],
       name: "Headless",
-      formats: ["es", "umd"],
+      formats: ["es", "umd", "cjs"],
       fileName: (format) => `headless.${format}.js`,
     },
   },
   plugins: [
     react(),
     dts({
-      outDir: ["dist", "types"],
-      // include: ['src/index.ts'],
-      exclude: ["src/ignore"],
-      // aliasesExclude: [/^@components/],
-      staticImport: true,
-      rollupTypes: true,
       insertTypesEntry: true,
     }),
   ],
