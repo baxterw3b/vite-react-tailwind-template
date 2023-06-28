@@ -5,17 +5,16 @@ import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "src"),
-    },
-  },
   build: {
     lib: {
-      entry: [resolve(__dirname, "src/index.ts")],
+      entry: resolve(__dirname, "src/index.ts"),
       name: "Headless",
-      formats: ["es", "umd", "cjs"],
-      fileName: (format) => `headless.${format}.js`,
+      fileName: "headless",
+    },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ["react", "react-dom"],
     },
   },
   plugins: [
